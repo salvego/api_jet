@@ -8,5 +8,11 @@ digite o seguintes comandos para instalar as depências
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Design
 
-para rodar o projeto é só digitar
+com o projeto aberto abra o terminal e digite
+dotnet ef migrations add CreateDabaseJet
+dotnet ef database update
+
+pronto agora é só abrir o banco de dados e confirmar se a migrations foi, se der certo é só rodar a api 
+
+para rodar a api é só digitar
 dotnet run
