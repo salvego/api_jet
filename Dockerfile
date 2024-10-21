@@ -6,10 +6,10 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["api-jet.csproj", "./"]
+COPY ["api-jet.csproj", "/"]
 RUN dotnet restore "./api-jet.csproj"
 COPY . .
-WORKDIR "/"
+WORKDIR "/src"
 RUN dotnet build "./api-jet.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
