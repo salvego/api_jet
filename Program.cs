@@ -68,5 +68,5 @@ void ConfigureServices(WebApplicationBuilder builder)
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     builder.Services.AddDbContext<JetDataContext>(
         options =>
-            options.UseSqlServer(connectionString));
+            options.UseNpgsql(connectionString));
 }
